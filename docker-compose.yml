@@ -1,0 +1,82 @@
+version: '2.1'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.1.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181    
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    expose:
+      - "2181"  
+    networks:
+      - hermes
+  kafka:
+    image: confluentinc/cp-kafka:5.1.0
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    hostname: kafka
+    container_name: kafka
+    depends_on: 
+      - zookeeper
+    ports:
+      - "9092:9092"
+    expose:
+      - "9092"
+    networks:
+      - hermes
+  spring_kafka_producer:
+    build: ./SpringKafkaProducer
+    hostname: spring_kafka_producer
+    container_name: spring_kafka_producer
+    depends_on: 
+      - kafka
+    ports:
+      - "9090:8080"
+    expose:
+      - "9090"
+    networks:
+      - hermes
+  spring_kafka_consumer:
+    build: ./SpringKafkaConsumer
+    hostname: spring_kafka_consumer
+    container_name: spring_kafka_consumer
+    depends_on: 
+      - kafka
+    ports:
+      - "9091:8080"
+    expose:
+      - "9091"
+    networks:
+      - hermes
+  producer_web_app:
+    build: ./ProducerWebApp
+    hostname: producer_web_app
+    container_name: producer_web_app
+    depends_on: 
+      - spring_kafka_producer
+    ports:
+      - "8080:8081"
+    expose:
+      - "8080"
+    networks:
+      - hermes  
+  consumer_web_app:
+    build: ./ConsumerWebApp
+    hostname: consumer_web_app
+    container_name: consumer_web_app
+    depends_on: 
+      - spring_kafka_consumer
+    ports:
+      - "8081:8081"
+    expose:
+      - "8081"
+    networks:
+      - hermes        
+
+networks:
+  hermes:

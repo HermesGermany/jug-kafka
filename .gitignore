@@ -1,0 +1,18 @@
+*.class
+.idea
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+#Maven
+**/.mvn
+
+**/target
+**/mvnw*
+**/HELP.md
+
+#IntelliJ files
+**/*.iml
+**/.idea

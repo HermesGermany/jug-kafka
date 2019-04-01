@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>JUGHH</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/gif/png" href="res/title_icon.PNG">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- you need to include the shieldui css and js assets in order for the components to work -->
+  <link rel="stylesheet" type="text/css"
+    href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+  <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="d3.layout.cloud.js"></script>
+  <style>
+    body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
+
+    h1 {
+      background-color: #0091CD;
+      color: #fff;
+      font-family: Montserrat, sans-serif;
+    }
+
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .container-fluid {
+      padding: 60px 50px;
+    }
+
+    .bg-grey {
+      background-color: #f6f6f6;
+    }
+
+    .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+    }
+
+    .logo {
+      color: #f4511e;
+      font-size: 200px;
+    }
+
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+    }
+
+    .carousel-control.right,
+    .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+    }
+
+    .carousel-indicators li {
+      border-color: #f4511e;
+    }
+
+    .carousel-indicators li.active {
+      background-color: #f4511e;
+    }
+
+    .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+    }
+
+    .item span {
+      font-style: normal;
+    }
+
+    .panel {
+      border: 1px solid #0091CD;
+      border-radius: 0 !important;
+      transition: box-shadow 0.5s;
+    }
+
+    .panel:hover {
+      box-shadow: 10px 0px 50px #0091CD;
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      background-color: #0091CD;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+    }
+
+    body {
+      padding-top: 5%;
+    }
+
+    #sendButton {
+      border: 1px solid #0091CD;
+      border-radius: 0 !important;
+      transition: box-shadow 0.5s;
+    }
+
+    #sendButton:hover {
+      box-shadow: 10px 0px 50px #0091CD;
+    }
+
+    .slider {
+      width: 100%;
+    }
+
+    body {
+      background-image: url(res/vogel_perspektive.jpg);
+      background-size: cover;
+      /* <------ */
+      background-repeat: no-repeat;
+      background-position: center center;
+      /* optional, center the image */
+      background-color: rgba(255, 255, 255, 0.9);
+      background-blend-mode: lighten;
+    }
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    .panel-heading {
+      font-size: 24px;
+      font-family: Montserrat, sans-serif;
+    }
+
+    @media screen and (max-width: 992px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      body {
+        padding-top: 10%;
+      }
+
+      nav>div>div>a {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      body {
+        padding-top: 15%;
+      }
+
+      nav>div>div>a {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      body {
+        padding-top: 30%;
+      }
+
+      nav>div>div>a {
+        display: none;
+      }
+    }
+
+    .bld {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="col-sm-12">
+      <div class="col-sm-2 navbar-brand text-left">
+        <a><img src="res/hermes_logo.PNG" alt="icon"></a>
+      </div>
+      <div class="col-sm-8 text-center">
+        <h1>MeetUp - Java User Group</h1>
+      </div>
+      <div class="col-sm-2 navbar-brand text-right">
+        <a><img src="res/jughh_logo.PNG" alt="icon"></a>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <div class="col-sm-12 text-center">
+    <div id="cloud"></div>
+  </div>
+
+  <script>
+    var width = 1200;
+    var height = 600;
+    var fill = d3.scale.category20();
+
+    d3.layout.cloud()
+      .size([width, height])
+      .words(JSON.parse('[{"size":5, "text": "Bereit!"}]'))
+    	/*.rotate(function() {
+    		return ~~(Math.random() * 2) * 90;
+      })*/
+      .rotate(0)
+      .font("Impact")
+      .fontSize(function (d) {
+        return d.size;
+      })
+      .on("end", drawSkillCloud)
+      .start();
+
+    // Finally implement `drawSkillCloud`, which performs the D3 drawing:
+
+    // apply D3.js drawing API
+    function drawSkillCloud(words) {
+      d3.select("svg").remove();
+      d3.select("#cloud").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(" + ~~(width / 2) + "," + ~~(height / 2) + ")")
+        .selectAll("text")
+        .data(words)
+        .enter().append("text")
+        .style("font-size", function (d) {
+          return d.size + "px";
+        })
+        .style("-webkit-touch-callout", "none")
+        .style("-webkit-user-select", "none")
+        .style("-khtml-user-select", "none")
+        .style("-moz-user-select", "none")
+        .style("-ms-user-select", "none")
+        .style("user-select", "none")
+        .style("cursor", "default")
+        .style("font-family", "Impact")
+        .style("fill", function (d, i) {
+          return fill(i);
+        })
+        .attr("text-anchor", "middle")
+        .attr("transform", function (d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function (d) {
+          return d.text;
+        });
+    }
+
+    // set the viewbox to content bounding box (zooming in on the content, effectively trimming whitespace)
+
+    var svg = document.getElementsByTagName("svg")[0];
+    var bbox = svg.getBBox();
+    var viewBox = [bbox.x, bbox.y, bbox.width, bbox.height].join(" ");
+    svg.setAttribute("viewBox", viewBox);
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    function receiveMessages() {
+      var res;
+      jQuery.ajaxSetup({async:false});
+      $.get("http://localhost:9091/messages", function (response) {
+        res = JSON.stringify(response);
+      });
+      return res;
+    }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    setInterval(function () {
+      var messages = receiveMessages();
+
+      d3.layout.cloud()
+        .size([width, height])
+        .words(JSON.parse(messages))
+        .rotate(0)
+        .font("Impact")
+        .fontSize(function (d) {
+          return d.size;
+        })
+        .on("end", drawSkillCloud)
+        .start();
+
+      var svg = document.getElementsByTagName("svg")[0];
+      var bbox = svg.getBBox();
+      var viewBox = [bbox.x, bbox.y, bbox.width, bbox.height].join(" ");
+      svg.setAttribute("viewBox", viewBox);
+    }, 2000);
+  </script>
+</body>
+
+</html>

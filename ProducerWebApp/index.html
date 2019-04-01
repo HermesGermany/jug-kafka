@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>JUGHH</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/gif/png" href="res/title_icon.PNG">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- you need to include the shieldui css and js assets in order for the components to work -->
+  <link rel="stylesheet" type="text/css"
+    href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+  <style>
+    body {
+      font: 400 20px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+    }
+
+    h1 {
+      background-color: #0091CD;
+      color: #fff;
+      font-family: Montserrat, sans-serif;
+    }
+
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .container-fluid {
+      padding: 60px 50px;
+    }
+
+    .bg-grey {
+      background-color: #f6f6f6;
+    }
+
+    .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+    }
+
+    .logo {
+      color: #f4511e;
+      font-size: 200px;
+    }
+
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+    }
+
+    .carousel-control.right,
+    .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+    }
+
+    .carousel-indicators li {
+      border-color: #f4511e;
+    }
+
+    .carousel-indicators li.active {
+      background-color: #f4511e;
+    }
+
+    .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+    }
+
+    .item span {
+      font-style: normal;
+    }
+
+    .panel {
+      border: 1px solid #0091CD;
+      border-radius: 0 !important;
+      transition: box-shadow 0.5s;
+    }
+
+    .panel:hover {
+      box-shadow: 10px 0px 50px #0091CD;
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      background-color: #0091CD;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+    }
+
+    #sendButton {
+      border: 1px solid #0091CD;
+      border-radius: 0 !important;
+      transition: box-shadow 0.5s;
+    }
+
+    #sendButton:hover {
+      box-shadow: 10px 0px 50px #0091CD;
+    }
+
+    .slider {
+      width: 100%;
+    }
+
+    body {
+      background-image: url(res/vogel_perspektive.jpg);
+      background-size: cover;
+      /* <------ */
+      /*background-repeat: no-repeat;*/
+      background-position: center center;
+      /* optional, center the image */
+      background-color: rgba(255, 255, 255, 0.8);
+      background-blend-mode: lighten;
+    }
+
+    body,
+    html {
+      height: 100%;
+    }
+
+    .btn{
+      font-size: 20px;
+    }
+
+    #sendButton{
+      font-size: 30px;
+    }
+
+    .panel-heading{
+      font-size: 30px;
+    }
+
+    .col-sm-12{
+      font-size: 30px;
+    }
+
+    .col-xs-12{
+      font-size: 30px;
+    }
+
+    @media screen and (max-width: 992px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      body {
+        padding-top: 7%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      body {
+        padding-top: 12%;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+      }
+
+      body {
+        padding-top: 30%;
+      }
+
+      nav>div>div>a {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="col-sm-12">
+      <div class="col-sm-2 navbar-brand text-left">
+        <a><img src="res/hermes_logo.PNG" alt="icon"></a>
+      </div>
+      <div class="col-sm-8 text-center">
+        <h1>MeetUp - Java User Group</h1>
+      </div>
+      <div class="col-sm-2 navbar-brand text-right">
+        <a><img src="res/jughh_logo.PNG" alt="icon"></a>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <div class="container-fluid">
+    <div class="text-center">
+      <h1>Was hältst du von Apache Kafka?</h1>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Antwortmöglichkeiten</div>
+      <div class="panel-body">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input  type="radio" name="auswahl" autocomplete="off" value="anregend" /> anregend
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="anspruchsvoll" /> anspruchsvoll
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="anstrengend" /> anstrengend
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="beeindruckend" /> beeindruckend
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="cool" /> cool
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="doof" /> doof
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="durchdacht" /> durchdacht
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="effizient" /> effizient
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="einschränkend" /> einschränkend
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="fordernd" /> fordernd
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="genial" /> genial
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="innovativ" /> innovativ
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="interessant" /> interessant
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="kompliziert" /> kompliziert
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="langweilig" /> langweilig
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="praktisch" /> praktisch
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="reizvoll" /> reizvoll
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="solide" /> solide
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="spannend" /> spannend
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="ungeeignet" /> ungeeignet
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="verlockend" /> verlockend
+            </label>
+            <label class="col-xs-12 col-sm-12 col-md-6 btn btn-default">
+              <input type="radio" name="auswahl" autocomplete="off" value="verwirrend" /> verwirrend
+            </label>
+          </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button id="sendButton" class="btn btn-default btn-lg" onclick="sendMessage();">Send</button>
+      <br>
+      <br>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      var selectedElement = document.querySelector('input[name="auswahl"]:checked');
+
+      if(selectedElement) {
+        $.post("http://localhost:9090/produce", { message: selectedElement.value });
+        alert("Die Auswahl: \"" + selectedElement.value + "\" wurde verschickt.");
+      } else {
+        alert("Es wurde keine Auswahl getroffen.");
+      }
+    }
+  </script>
+</body>
+
+</html>
